@@ -1,0 +1,389 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "entrenador fit",
+            "intents": [
+                {
+                    "name": "GenerarRutinaIntent",
+                    "slots": [
+                        {
+                            "name": "peso_kg",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "estatura_cm",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "edad",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "semana",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "tipo",
+                            "type": "TipoType"
+                        },
+                        {
+                            "name": "modo",
+                            "type": "ModoType"
+                        },
+                        {
+                            "name": "nivel",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "quiero una rutina",
+                        "genera una rutina",
+                        "dame una rutina",
+                        "crea una rutina",
+                        "hacer rutina",
+                        "empezar rutina",
+                        "crear rutina",
+                        "crear rutinas",
+                        "hacer ejercicio",
+                        "dame una rutina para {tipo}",
+                        "quiero una rutina de {tipo}",
+                        "hazme una rutina de {tipo}",
+                        "quiero entrenar {tipo}",
+                        "rutina para {tipo}",
+                        "rutina en modo {modo}",
+                        "rutina {tipo} modo {modo}",
+                        "quiero entrenar en modo {modo}",
+                        "quiero una rutina en modo {modo}",
+                        "rutina {tipo} {modo}"
+                    ]
+                },
+                {
+                    "name": "VerRutinasIntent",
+                    "slots": [],
+                    "samples": [
+                        "ver mis rutinas",
+                        "muéstrame mis rutinas",
+                        "muestrame mis rutinas",
+                        "qué rutinas tengo guardadas",
+                        "ver rutinas",
+                        "mostrar rutinas"
+                    ]
+                },
+                {
+                    "name": "BorrarRutinaIntent",
+                    "slots": [
+                        {
+                            "name": "nombre",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "borrar rutina {nombre}",
+                        "eliminar rutina {nombre}",
+                        "borra la rutina {nombre}",
+                        "quita la rutina {nombre}",
+                        "borrar la rutina {nombre}"
+                    ]
+                },
+                {
+                    "name": "ElegirRutinaIntent",
+                    "slots": [
+                        {
+                            "name": "nombre",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "ver rutina {nombre}",
+                        "ver la rutina {nombre}",
+                        "mostrar rutina {nombre}",
+                        "muéstrame la rutina {nombre}",
+                        "muestrame la rutina {nombre}"
+                    ]
+                },
+                {
+                    "name": "PesoSoloIntent",
+                    "slots": [
+                        {
+                            "name": "peso_kg",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "{peso_kg}",
+                        "{peso_kg} kilos",
+                        "peso {peso_kg}",
+                        "tengo {peso_kg} kilos"
+                    ]
+                },
+                {
+                    "name": "EstaturaSoloIntent",
+                    "slots": [
+                        {
+                            "name": "estatura_cm",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "mido {estatura_cm} centímetros",
+                        "mido {estatura_cm}",
+                        "mido {estatura_cm} cm",
+                        "mi estatura es {estatura_cm}",
+                        "tengo una estatura de {estatura_cm}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "ayuda",
+                        "qué puedo hacer",
+                        "cómo funciona",
+                        "qué haces",
+                        "ayúdame",
+                        "no sé qué hacer"
+                    ]
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "cancelar",
+                        "salir",
+                        "terminar",
+                        "ya no",
+                        "detener"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "para",
+                        "detente",
+                        "basta",
+                        "ya"
+                    ]
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": [
+                        "no entiendo",
+                        "qué",
+                        "no sé",
+                        "no te entiendo"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.YesIntent",
+                    "samples": [
+                        "sí",
+                        "claro",
+                        "ok",
+                        "va",
+                        "adelante",
+                        "sí quiero",
+                        "sí por favor"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NoIntent",
+                    "samples": [
+                        "no",
+                        "no quiero",
+                        "ya no",
+                        "mejor no",
+                        "no gracias",
+                        "no por ahora"
+                    ]
+                },
+                {
+                    "name": "AsignarNombreRutinaIntent",
+                    "slots": [
+                        {
+                            "name": "nombre",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "llama a esta rutina {nombre}",
+                        "ponle nombre {nombre}",
+                        "guardar rutina como {nombre}",
+                        "guarda esta rutina como {nombre}",
+                        "guardar como {nombre}",
+                        "guardar rutina con nombre {nombre}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "TipoType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "UPPER",
+                                "synonyms": [
+                                    "upper",
+                                    "upper body",
+                                    "tren superior",
+                                    "parte de arriba",
+                                    "arriba",
+                                    "pecho y espalda",
+                                    "espalda",
+                                    "pecho",
+                                    "brazos",
+                                    "hombros",
+                                    "bíceps",
+                                    "tríceps",
+                                    "pecho espalda"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "LOWER",
+                                "synonyms": [
+                                    "lower",
+                                    "piernas",
+                                    "tren inferior",
+                                    "parte de abajo",
+                                    "abajo",
+                                    "glúteos",
+                                    "piernas y glúteos",
+                                    "inferior"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ModoType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "FACIL",
+                                "synonyms": [
+                                    "fácil",
+                                    "principiante",
+                                    "básico"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "MEDIO",
+                                "synonyms": [
+                                    "medio",
+                                    "intermedio",
+                                    "normal"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "DIFICIL",
+                                "synonyms": [
+                                    "difícil",
+                                    "avanzado",
+                                    "intenso",
+                                    "fuerte"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "RANDOM",
+                                "synonyms": [
+                                    "aleatorio",
+                                    "al azar",
+                                    "sorpresa",
+                                    "random"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "MANUAL",
+                                "synonyms": [
+                                    "manual",
+                                    "personalizado",
+                                    "a mi gusto",
+                                    "yo elijo"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "GenerarRutinaIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "peso_kg",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.Peso"
+                            }
+                        },
+                        {
+                            "name": "estatura_cm",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.Estatura"
+                            }
+                        },
+                        {
+                            "name": "modo",
+                            "type": "ModoType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.Modo"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "SKILL_RESPONSE"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.Peso",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿Cuál es tu peso en kilogramos? Puedes decir setenta o setenta kilos."
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.Estatura",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿Cuál es tu estatura? Puedes decir ciento setenta y dos centímetros o uno punto setenta y dos metros."
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.Modo",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿Quieres modo manual o aleatorio?"
+                    }
+                ]
+            }
+        ]
+    }
+}

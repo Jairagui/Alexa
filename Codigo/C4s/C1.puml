@@ -1,0 +1,21 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+title C1 - Contexto Entrenador Fit
+
+Person(usuario, "Usuario de Alexa", "Persona que entrena en casa con rutinas guiadas")
+System_Ext(alexa, "Alexa", "Plataforma de voz de Amazon Alexa")
+
+System_Boundary(skill_boundary, "Skill Entrenador Fit") {
+  System(skill, "Skill Entrenador Fit", "Skill de Alexa para crear y gestionar rutinas de ejercicio")
+  System(backend, "Lambda Backend Entrenador Fit", "Función AWS Lambda con la lógica de negocio de la skill")
+}
+
+SystemDb(storage, "Almacenamiento  rutinas")
+
+Rel(usuario, alexa, "Da comandos de voz y escucha respuestas", "Voz")
+Rel(alexa, skill, "Envía intents y recibe respuestas", "JSON / HTTPS")
+Rel(skill, backend, "Invoca la función Lambda", "JSON / HTTPS")
+Rel(backend, storage, "Guarda y consulta perfiles y rutinas", "SDK AWS")
+
+@enduml

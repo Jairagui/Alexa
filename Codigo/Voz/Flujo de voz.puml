@@ -1,0 +1,108 @@
+@startuml Master
+
+skinparam shadowing false
+skinparam state {
+  BackgroundColor #f8f8f8
+  BorderColor #888
+  RoundCorner 12
+}
+
+[*] --> Launch
+
+'  LAUNCH
+state Launch {
+  [*] --> Bienvenida
+  Bienvenida : Saludo + explica propósito\n("Puedo crear rutinas o ver tus rutinas guardadas")
+  Bienvenida --> MenuPrincipal
+}
+
+'  MENÚ PRINCIPAL
+state MenuPrincipal {
+  [*] --> PreguntaMenu
+  PreguntaMenu : "¿Quieres crear rutina o ver rutinas?"
+  PreguntaMenu --> VerRutinas   : "ver rutinas"
+  PreguntaMenu --> PreguntarPeso: "crear rutina"
+}
+
+' VER RUTINAS: VER / BORRAR
+state VerRutinas {
+  [*] --> PreguntaVer
+  PreguntaVer : "¿Quieres ver rutina o borrar rutina?"
+  PreguntaVer --> VerRutina    : "ver rutina"
+  PreguntaVer --> BorrarRutina : "borrar rutina"
+  PreguntaVer --> MenuPrincipal: "volver al menú"
+}
+
+state VerRutina {
+  [*] --> AccionVer
+  AccionVer : "Muestra la rutina seleccionada"
+  AccionVer --> VerRutinas : "volver"
+}
+
+state BorrarRutina {
+  [*] --> AccionBorrar
+  AccionBorrar : "Borra la rutina seleccionada"
+  AccionBorrar --> VerRutinas : "volver"
+}
+
+'  CREAR RUTINA
+state PreguntarPeso {
+  [*] --> Peso
+  Peso : "¿Cuánto pesas?"
+  Peso --> PreguntarEstatura
+}
+
+state PreguntarEstatura {
+  [*] --> Estatura
+  Estatura : "¿Cuánto mides?"
+  Estatura --> PreguntarModo
+}
+
+state PreguntarModo {
+  [*] --> Modo
+  Modo : "¿Modo aleatorio o manual?"
+  Modo --> CrearRutina    : "aleatorio"
+  Modo --> PreguntarNivel : "manual"
+}
+
+'  CAMINO MANUAL: NIVEL Y TIPO
+state PreguntarNivel {
+  [*] --> Nivel
+  Nivel : "¿Nivel fácil, medio o difícil?"
+  Nivel --> PreguntarTipo
+}
+
+state PreguntarTipo {
+  [*] --> Tipo
+  Tipo : "¿Quieres rutina upper o lower?"
+  Tipo --> CrearRutina
+}
+
+'  CREAR RUTINA
+state CrearRutina {
+  [*] --> Rutina
+  Rutina : "Genera y muestra la rutina\n(según datos, modo, nivel y upper/lower)"
+
+  ' Si no le gustó la rutina, vuelve a generarla
+  Rutina --> CrearRutina : "volver a generar rutina"
+
+  ' Si le gustó pregunta si quiere guardar
+  Rutina --> GuardarRutina : "sí guardar"
+  Rutina --> Fin : "no guardar"
+}
+
+' GUARDAR RUTINA NOMBRE
+state GuardarRutina {
+  [*] --> PreguntarNombre
+  PreguntarNombre : "¿Con qué nombre quieres guardar la rutina?"
+  PreguntarNombre --> Fin : "guarda la rutina"
+}
+
+'FIN
+state Fin {
+  [*] --> Salida
+  Salida : "Termina flujo de crear rutina"
+  Salida --> [*]
+}
+
+@enduml

@@ -1,0 +1,347 @@
+{
+  "warmup": [
+    {
+      "title": "Movilidad articular",
+      "segundos": 20,
+      "decir": "Cuello, hombros, cadera."
+    },
+    {
+      "title": "Marcha suave",
+      "segundos": 20,
+      "decir": "Activa sin impacto."
+    }
+  ],
+  "cooldown": [
+    {
+      "title": "Estiramiento general",
+      "segundos": 20,
+      "decir": "Respira y relaja."
+    }
+  ],
+  "sets": {
+    "UPPER_FACIL_NO_SOBREPESO": [
+      {
+        "title": "Wall push-ups",
+        "segundos": 20,
+        "decir": "Flexiones en pared."
+      },
+      {
+        "title": "Remo elástico sentado",
+        "segundos": 20,
+        "decir": "Espalda recta."
+      },
+      {
+        "title": "Elevación lateral ligera",
+        "segundos": 20,
+        "decir": "Codos semi flexionados."
+      },
+      {
+        "title": "Press hombro banda",
+        "segundos": 20,
+        "decir": "Empuja hacia arriba."
+      },
+      {
+        "title": "Aperturas banda",
+        "segundos": 20,
+        "decir": "Controla el movimiento."
+      }
+    ],
+    "UPPER_FACIL_SOBREPESO": [
+      {
+        "title": "Press banda sentado",
+        "segundos": 20,
+        "decir": "Empuja banda sentado."
+      },
+      {
+        "title": "Remo elástico sentado",
+        "segundos": 20,
+        "decir": "Espalda recta."
+      },
+      {
+        "title": "Elevación lateral ligera",
+        "segundos": 20,
+        "decir": "Codos semi flexionados."
+      },
+      {
+        "title": "Press hombro banda",
+        "segundos": 20,
+        "decir": "Empuja hacia arriba."
+      },
+      {
+        "title": "Aperturas banda",
+        "segundos": 20,
+        "decir": "Controla el movimiento."
+      }
+    ],
+    "UPPER_INTERMEDIO_NO_SOBREPESO": [
+      {
+        "title": "Flexiones rodillas",
+        "segundos": 25,
+        "decir": "Apoya rodillas."
+      },
+      {
+        "title": "Flexiones inclinadas",
+        "segundos": 25,
+        "decir": "Manos en banca."
+      },
+      {
+        "title": "Remo invertido",
+        "segundos": 30,
+        "decir": "Escápulas atrás."
+      },
+      {
+        "title": "Fondos en banco",
+        "segundos": 30,
+        "decir": "Codos hacia atrás."
+      },
+      {
+        "title": "Press militar con banda",
+        "segundos": 25,
+        "decir": "Centro activo."
+      }
+    ],
+    "UPPER_INTERMEDIO_SOBREPESO": [
+      {
+        "title": "Press pared + pausa",
+        "segundos": 25,
+        "decir": "Empuja pared con pausas."
+      },
+      {
+        "title": "Flexiones inclinadas",
+        "segundos": 25,
+        "decir": "Manos en banca."
+      },
+      {
+        "title": "Remo invertido",
+        "segundos": 30,
+        "decir": "Escápulas atrás."
+      },
+      {
+        "title": "Fondos en banco",
+        "segundos": 30,
+        "decir": "Codos hacia atrás."
+      },
+      {
+        "title": "Press militar con banda",
+        "segundos": 25,
+        "decir": "Centro activo."
+      }
+    ],
+    "UPPER_DIFICIL_NO_SOBREPESO": [
+      {
+        "title": "Flexiones completas",
+        "segundos": 20,
+        "decir": "Cuerpo alineado."
+      },
+      {
+        "title": "Flexiones diamante",
+        "segundos": 20,
+        "decir": "Codos pegados."
+      },
+      {
+        "title": "Pike push ups",
+        "segundos": 20,
+        "decir": "Cadera alta."
+      },
+      {
+        "title": "Aperturas con banda dura",
+        "segundos": 25,
+        "decir": "Controla la vuelta."
+      },
+      {
+        "title": "Remo unilateral fuerte",
+        "segundos": 30,
+        "decir": "Hombros alineados."
+      }
+    ],
+    "UPPER_DIFICIL_SOBREPESO": [
+      {
+        "title": "Flexiones inclinadas",
+        "segundos": 20,
+        "decir": "Superficie elevada."
+      },
+      {
+        "title": "Flexiones diamante",
+        "segundos": 20,
+        "decir": "Codos pegados."
+      },
+      {
+        "title": "Pike push ups",
+        "segundos": 20,
+        "decir": "Cadera alta."
+      },
+      {
+        "title": "Aperturas con banda dura",
+        "segundos": 25,
+        "decir": "Controla la vuelta."
+      },
+      {
+        "title": "Remo unilateral fuerte",
+        "segundos": 30,
+        "decir": "Hombros alineados."
+      }
+    ],
+    "LOWER_FACIL_NO_SOBREPESO": [
+      {
+        "title": "Sentadilla asistida",
+        "segundos": 20,
+        "decir": "Con silla, baja suave."
+      },
+      {
+        "title": "Puente de glúteo",
+        "segundos": 25,
+        "decir": "Aprieta al subir."
+      },
+      {
+        "title": "Abducciones en el suelo",
+        "segundos": 20,
+        "decir": "Sin dolor."
+      },
+      {
+        "title": "Marcha alta",
+        "segundos": 20,
+        "decir": "Eleva rodillas suave."
+      },
+      {
+        "title": "Peso muerto banda suave",
+        "segundos": 20,
+        "decir": "Espalda neutra."
+      }
+    ],
+    "LOWER_FACIL_SOBREPESO": [
+      {
+        "title": "Puente de gluteo",
+        "segundos": 20,
+        "decir": "Aprieta gluteos."
+      },
+      {
+        "title": "Puente de glúteo",
+        "segundos": 25,
+        "decir": "Aprieta al subir."
+      },
+      {
+        "title": "Abducciones en el suelo",
+        "segundos": 20,
+        "decir": "Sin dolor."
+      },
+      {
+        "title": "Marcha alta",
+        "segundos": 20,
+        "decir": "Eleva rodillas suave."
+      },
+      {
+        "title": "Peso muerto banda suave",
+        "segundos": 20,
+        "decir": "Espalda neutra."
+      }
+    ],
+    "LOWER_INTERMEDIO_NO_SOBREPESO": [
+      {
+        "title": "Sentadilla",
+        "segundos": 25,
+        "decir": "Peso en talones."
+      },
+      {
+        "title": "Zancadas",
+        "segundos": 30,
+        "decir": "Alterna piernas."
+      },
+      {
+        "title": "Sentadilla goblet",
+        "segundos": 30,
+        "decir": "Peso al frente."
+      },
+      {
+        "title": "Peso muerto rumano",
+        "segundos": 25,
+        "decir": "Isquios activados."
+      },
+      {
+        "title": "Step-ups",
+        "segundos": 25,
+        "decir": "Controla la bajada."
+      }
+    ],
+    "LOWER_INTERMEDIO_SOBREPESO": [
+      {
+        "title": "Sentadilla parcial",
+        "segundos": 25,
+        "decir": "Rango comodo."
+      },
+      {
+        "title": "Zancadas",
+        "segundos": 30,
+        "decir": "Alterna piernas."
+      },
+      {
+        "title": "Sentadilla goblet",
+        "segundos": 30,
+        "decir": "Peso al frente."
+      },
+      {
+        "title": "Peso muerto rumano",
+        "segundos": 25,
+        "decir": "Isquios activados."
+      },
+      {
+        "title": "Step-ups",
+        "segundos": 25,
+        "decir": "Controla la bajada."
+      }
+    ],
+    "LOWER_DIFICIL_NO_SOBREPESO": [
+      {
+        "title": "Sentadilla con salto",
+        "segundos": 15,
+        "decir": "Salto suave."
+      },
+      {
+        "title": "Sentadilla búlgara",
+        "segundos": 25,
+        "decir": "Tronco erguido."
+      },
+      {
+        "title": "Saltos pliométricos",
+        "segundos": 15,
+        "decir": "Aterriza suave."
+      },
+      {
+        "title": "Zancada con salto",
+        "segundos": 15,
+        "decir": "Cambio rápido."
+      },
+      {
+        "title": "Peso muerto a una pierna",
+        "segundos": 25,
+        "decir": "Equilibrio."
+      }
+    ],
+    "LOWER_DIFICIL_SOBREPESO": [
+      {
+        "title": "Step-ups moderados",
+        "segundos": 20,
+        "decir": "Apoyo si necesitas."
+      },
+      {
+        "title": "Sentadilla búlgara",
+        "segundos": 25,
+        "decir": "Tronco erguido."
+      },
+      {
+        "title": "Saltos pliométricos",
+        "segundos": 15,
+        "decir": "Aterriza suave."
+      },
+      {
+        "title": "Zancada con salto",
+        "segundos": 15,
+        "decir": "Cambio rápido."
+      },
+      {
+        "title": "Peso muerto a una pierna",
+        "segundos": 25,
+        "decir": "Equilibrio."
+      }
+    ]
+  }
+}

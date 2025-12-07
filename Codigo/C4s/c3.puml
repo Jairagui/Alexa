@@ -1,0 +1,30 @@
+@startuml C4_Component
+title C3 - Componentes Entrenador Fit
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+LAYOUT_LEFT_RIGHT()
+
+Container_Ext(ask, "Interaction Model (ASK)", "Alexa", "Invocación, intents y slots de Entrenador Fit")
+ContainerDb(s3, "Storage (S3)", "Objetos JSON", "Perfiles de usuario y rutinas guardadas")
+
+Container_Boundary(lambdaFn, "Lambda Backend (Python)") {
+  Component(handlers, "IntentHandlers", "lambda_function.py", "Procesa los intents de Alexa, normaliza datos y arma las respuestas")
+  Component(facade, "RoutineFacade", "rutina_servicio.py", "Coordina el cálculo de IMC y la generación de rutinas")
+  Component(creador, "RutinaCreator", "rutina_creador.py", "Construye la rutina (warmup, set principal y cooldown)")
+  Component(selector, "SelectorSets", "selector_sets.py", "Elige el set de ejercicios según nivel, tipo y sobrepeso")
+  Component(strategies, "ModoStrategy", "modos_rutina.py", "Define el comportamiento para modo manual o aleatorio")
+  Component(imcSvc, "IMCService", "imc.py", "Funciones para calcular IMC y determinar sobrepeso")
+  Component(session, "SessionState", "atributos de sesión", "Guarda datos temporales de la sesión (peso, estatura, modo, etc.)")
+  Component(s3gw, "S3Adapter", "lambda_function.py / boto3", "Guardar y leer perfiles/rutinas en S3")
+}
+
+Rel(ask, handlers, "Evento de intent / respuesta", "JSON (ASK)")
+Rel(handlers, facade, "Pide generar rutina con los datos del usuario")
+Rel(facade, imcSvc, "Calcula IMC y sobrepeso")
+Rel(facade, strategies, "Crea la strategy según el modo elegido")
+Rel(strategies, selector, "Solicita los sets de ejercicios")
+Rel(facade, creador, "Crea la estructura final de la rutina")
+Rel(handlers, session, "Lee / escribe atributos de sesión")
+Rel(handlers, s3gw, "Guardar / leer rutinas y perfiles", "AWS SDK")
+Rel(s3gw, s3, "CRUD de objetos JSON")
+
+@enduml

@@ -1,0 +1,18 @@
+@startuml C4_Container
+title C2 - Contenedores Entrenador Fit
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+LAYOUT_LEFT_RIGHT()
+
+Person(usuario, "Usuario", "Persona que entrena en casa con la skill")
+
+System_Boundary(app, "Entrenador Fit") {
+  Container(intents, "Interaction Model (ASK)", "Alexa Skill", "Nombre de invocación, intents, slots y utterances de Entrenador Fit")
+  Container(lambdaFn, "Lambda Backend", "Node.js", "Handlers de los intents, cálculo de IMC, generación de rutinas y gestión de rutinas guardadas")
+  ContainerDb(storage, "Storage (S3 )", "Objetos JSON", " rutinas almacenadas")
+}
+
+Rel(usuario, intents, "Invoca y responde", "Voz")
+Rel(intents, lambdaFn, "Evento de intent", "JSON (ASK → Lambda)")
+Rel(lambdaFn, storage, "CRUD perfiles y rutinas", "AWS SDK")
+
+@enduml

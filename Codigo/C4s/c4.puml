@@ -1,0 +1,43 @@
+@startuml C4_Class
+title C4 - Clases principales Entrenador Fit
+
+skinparam shadowing false
+skinparam class {
+  BackgroundColor #f8f8f8
+  BorderColor #888
+  RoundCorner 8
+}
+
+class Usuario {
+  - peso : float
+  - estatura : float
+  - nivel : string    facil / intermedio / avanzado
+  - imc : float       IMC actual del usuario
+}
+
+class IMC {
+  - valor : float
+  + calcular(peso : float, estatura : float) : float
+}
+
+class Rutina {
+  - nombre : string
+  - tipo : string    upper / lower / full body
+  - nivel : string   facil / medio / dificil
+  - modo : string    aleatorio / manual
+  - ejercicios : List<Ejercicio>
+}
+
+class Ejercicio {
+  - nombre : string
+  - grupoMuscular : string
+  - repeticiones : int
+  - duracionSeg : int
+}
+
+' Relaciones simples
+Usuario --> IMC
+Usuario --> Rutina
+Rutina --> Ejercicio
+
+@enduml

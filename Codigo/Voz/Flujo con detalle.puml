@@ -1,0 +1,90 @@
+@startuml DetalleCrearRutina
+
+skinparam shadowing false
+skinparam state {
+  BackgroundColor #f8f8f8
+  BorderColor #888
+  RoundCorner 12
+}
+
+[*] --> PreguntarPeso
+
+state PreguntarPeso {
+  [*] --> Peso
+  Peso : "¿Cuánto pesas?"
+  Peso --> PreguntarEstatura : respuesta válida
+  Peso --> Peso : no entendido\n(repite la pregunta)
+}
+
+state PreguntarEstatura {
+  [*] --> Estatura
+  Estatura : "¿Cuánto mides?\n(se calcula IMC con peso y estatura)"
+  Estatura --> PreguntarModo : respuesta válida
+  Estatura --> Estatura : no entendido\n(repite la pregunta)
+}
+
+state PreguntarModo {
+  [*] --> Modo
+  Modo : "¿Modo aleatorio o manual?"
+  Modo --> GenerarRutinaAleatoria : "aleatorio"
+  Modo --> PreguntarNivel : "manual"
+  Modo --> Modo : no entendido\n(repite la pregunta)
+}
+
+state PreguntarNivel {
+  [*] --> Nivel
+  Nivel : "¿Nivel fácil, medio o difícil?"
+  Nivel --> PreguntarTipo : respuesta válida
+  Nivel --> Nivel : no entendido\n(repite la pregunta)
+}
+
+state PreguntarTipo {
+  [*] --> Tipo
+  Tipo : "¿Quieres rutina upper o lower?"
+  Tipo --> GenerarRutinaManual : respuesta válida
+  Tipo --> Tipo : no entendido\n(repite la pregunta)
+}
+
+state GenerarRutinaAleatoria {
+  [*] --> RutinaA
+  RutinaA : Genera rutina ALEATORIA\nusando datos del usuario e IMC
+  RutinaA --> PreguntarGusto
+}
+
+state GenerarRutinaManual {
+  [*] --> RutinaM
+  RutinaM : Genera rutina MANUAL\nsegún nivel, upper/lower e IMC
+  RutinaM --> PreguntarGusto
+}
+
+state PreguntarGusto {
+  [*] --> Gusto
+  Gusto : "¿Te gustó la rutina?"
+  Gusto --> PreguntarGuardar : "sí"
+  Gusto --> GenerarRutinaAleatoria : "no" (si estaba en aleatorio)\nvolver a generar rutina
+  Gusto --> GenerarRutinaManual : "no" (si estaba en manual)\nvolver a generar rutina
+  Gusto --> Gusto : no entendido\n(repite la pregunta)
+}
+
+state PreguntarGuardar {
+  [*] --> Guardar
+  Guardar : "¿Quieres guardar esta rutina?"
+  Guardar --> PreguntarNombre : "sí"
+  Guardar --> Fin : "no"
+  Guardar --> Guardar : no entendido\n(repite la pregunta)
+}
+
+state PreguntarNombre {
+  [*] --> Nombre
+  Nombre : "¿Con qué nombre\nquieres guardar la rutina?"
+  Nombre --> Fin : guarda la rutina\ncon ese nombre
+  Nombre --> Nombre : no entendido\n(repite la pregunta)
+}
+
+state Fin {
+  [*] --> FinCrear
+  FinCrear : Termina el flujo de crear rutina\n(puede volver al menú en el flujo general)
+  FinCrear --> [*]
+}
+
+@enduml
